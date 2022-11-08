@@ -2,21 +2,25 @@ import React from "react";
 import "./ExpenseForm.css";
 
 function ExpenseForm() {
+  const titleChangeHandler = event => {
+    console.log(event);
+  };
+
   return (
     <form>
       {/* 모든 입력값을 갖는 div */}
       <div className="new-expense__controls">
         {/* 단일 입력값을 갖는 div */}
         <div className="new-expense__control">
-          <lable>Title</lable>
-          <input type="text" />
+          <label>Title</label>
+          <input type="text" onChange={titleChangeHandler} />
         </div>
         <div className="new-expense__control">
-          <lable>Amount</lable>
+          <label>Amount</label>
           <input type="number" min="100" step="100" />
         </div>
         <div className="new-expense__control">
-          <lable>Date</lable>
+          <label>Date</label>
           <input type="date" min="2020-01-01" max="2023-12-31" />
         </div>
       </div>
