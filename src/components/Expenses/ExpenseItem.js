@@ -13,6 +13,9 @@ function ExpenseItem(props) {
 
   const clickHandler = () => {
     setTitle("Updated!");
+    // 함수를 호출했을 때 바로 값을 바꾸지 않음
+    // state의 업데이트를 예약함
+    // 그래서 console에는 이 전 값이 찍히게 되고 컴포넌트가 다시 호출되어 재평가되면 그 땐 업데이트된 값을 볼 수 있음
     console.log(title);
   };
 
