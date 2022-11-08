@@ -39,8 +39,20 @@ function ExpenseForm() {
     // });
   };
 
+  const submitHandler = event => {
+    event.preventDefault(); // 폼을 제출했을 때 기본 요청이 보내지는 것을 막아준다.
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
+
+    console.log(expenseData);
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       {/* 모든 입력값을 갖는 div */}
       <div className="new-expense__controls">
         {/* 단일 입력값을 갖는 div */}

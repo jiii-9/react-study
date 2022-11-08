@@ -38,6 +38,7 @@ console.log(event.target.value)
 로 확인해볼 수 있다.
 <br />
 <br />
+<br />
 
 # state에 값 저장하기
 
@@ -124,4 +125,8 @@ const titleChangeHandler = event => {
 
 - setUserInput 안에 있는 함수에서 prevState 의 값이 가장 최신의 값이라는 것과 항상 계획된 상태 업데이트를 염두해 두고 있다는 걸 보장한다.
 - 항상 최신 상태의 값에서 작업하도록 하는 2번보다 좀 더 안전한 방법이다.
-- <strong>상태 업데이트가 이전 상태에 의존하고 있다면 이 함수를 사용하면 된다.</strong>
+- <strong>상태 업데이트가 이전 상태에 의존하고 있다면 이 함수를 사용하면 된다.</strong> <br />
+  <br />
+  <br />
+
+# 버튼으로 양식 제출하기
