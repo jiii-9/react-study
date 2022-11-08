@@ -130,3 +130,42 @@ const titleChangeHandler = event => {
   <br />
 
 # 버튼으로 양식 제출하기
+
+```
+const submitHandler = event => {
+  event.preventDefault();
+  const expenseData = {
+    title: enteredTitle,
+    amount: enteredAmount,
+    date: new Date(enteredDate),
+  };
+
+  setEnteredTitle("");
+  setEnteredAmount("");
+  setEnteredDate("");
+};
+
+return (
+  <form onSubmit={submitHandler}>
+  </  form>
+)
+```
+
+- 폼을 제출했을 때 동작하는 함수를 만들어준다.
+- 기본 동작을 막하주고, 입력받은 데이터를 하나의 객체로 모아준다.
+- 폼이 제출되고 나서 input 값이 비워지게 하기 위해서 변경합수에 빈 문자열을 넣어준다.
+
+```
+ <div className="new-expense__control">
+  <label>Title</label>
+  <input
+    type="text"
+    value={enteredTitle}
+    onChange={titleChangeHandler}
+  />
+</div>
+```
+
+- input에 value를 추가해준다.
+- value의 값에 현재의 상태를 담아주게 되면 폼 전송에 따라 사용자의 입력을 모으거나 변경할 수 있게 해준다
+- 이를 <strong>양방향 바인딩</strong> 이라고 하는데 폼으로 작성할 때 아주 유용하다.

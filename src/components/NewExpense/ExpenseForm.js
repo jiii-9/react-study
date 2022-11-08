@@ -47,7 +47,9 @@ function ExpenseForm() {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
-
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
     console.log(expenseData);
   };
 
@@ -58,7 +60,11 @@ function ExpenseForm() {
         {/* 단일 입력값을 갖는 div */}
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} />
+          <input
+            type="text"
+            value={enteredTitle} // 양방향 바인딩: 폼으로 작성할 때 아주 유용하다. => 폼 전송에 따라 사용자의 입력을 모으거나 변경할 수 있게 해준다.
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
@@ -66,6 +72,7 @@ function ExpenseForm() {
             type="number"
             min="100"
             step="100"
+            value={enteredAmount}
             onChange={amountChangeHandler}
           />
         </div>
@@ -75,6 +82,7 @@ function ExpenseForm() {
             type="date"
             min="2020-01-01"
             max="2023-12-31"
+            value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>
