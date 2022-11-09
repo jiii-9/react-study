@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-function ExpenseForm() {
+function ExpenseForm({ onSaveExpenseData }) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -47,10 +47,12 @@ function ExpenseForm() {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
+
+    // NewExpense에서 만든 함수를 여기서 사용해서 데이터를 보내준다.
+    onSaveExpenseData(expenseData);
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
-    console.log(expenseData);
   };
 
   return (
@@ -71,7 +73,7 @@ function ExpenseForm() {
           <input
             type="number"
             min="100"
-            step="100"
+            step="10"
             value={enteredAmount}
             onChange={amountChangeHandler}
           />
