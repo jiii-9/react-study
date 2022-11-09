@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-function ExpenseForm({ onSaveExpenseData }) {
+function ExpenseForm({ onSaveExpenseData, onCancel }) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -92,6 +92,9 @@ function ExpenseForm({ onSaveExpenseData }) {
 
       {/* 폼을 넘겨줄 버튼/ */}
       <div className="new-expense__actions">
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
